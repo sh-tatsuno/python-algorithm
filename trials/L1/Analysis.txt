@@ -1,0 +1,24 @@
+# Runtime Analysis
+
+## Task 0
+
+In Task 0, the program only access the first and last part of lists.
+Thus, excluding reading parts (with ~), the order of main part is O(1).
+
+## Task 1
+I use set function to add the unique telephone number.
+Set function can add by O(1), so in total, the order is O(N_text + N_call) => O(N).
+
+## Task 2
+I use dict function to sum the duraion of time.
+Set function can search key by O(1), and at last, I search the most biggest value and correspondent key.
+The order of the runtime would bw O(N).
+
+## Task 3
+I first define the function to extract prefix (this would be O(1)).
+For loop is used only once in calls, and sort function is used also once.
+Finally, the order would be O(N).
+
+## Task 4
+I also use set function and iteration in text and call data.
+Order of each loop is O(N), so the total order is also O(N).
