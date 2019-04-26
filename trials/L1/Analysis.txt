@@ -17,8 +17,10 @@ The order of the runtime would bw O(N).
 ## Task 3
 I first define the function to extract prefix (this would be O(1)).
 For loop is used only once in calls, and sort function is used also once.
-Finally, the order would be O(N).
+I use sort function in the last. In worst case, the complexity of sort function is O(NlogN).  
+Finally, the order would be O(NlogN).
 
 ## Task 4
 I also use set function and iteration in text and call data.
-Order of each loop is O(N), so the total order is also O(N).
+Order of each loop is O(N), and sort function is used in the last.
+so the total order is also O(NlogN).
