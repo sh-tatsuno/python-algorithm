@@ -1,3 +1,9 @@
+class DoubleNode:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+        self.previous = None
+
 class DoublyLinkedList:
     def __init__(self):
         self.head = None
