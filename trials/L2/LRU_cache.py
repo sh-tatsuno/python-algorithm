@@ -77,7 +77,7 @@ class LRU_Cache(object):
         return 
 
 def assertion(v1, v2):
-    assert v1 == v2, "expected: {0}, actual: {1}".format(v1, v2)
+    assert v1 == v2, "actual: {0}, expected: {1}".format(v1, v2)
 
 our_cache = LRU_Cache(2)
 
