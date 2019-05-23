@@ -31,19 +31,21 @@ def find_files(suffix, path):
             if full_path[-len(suffix):] == suffix:
                 ret.append(full_path)
 
-    return ret
+    return sorted(ret)
 
-def assertion(v1, v2):
-    assert set(v1) == set(v2), "actual: {0}, expected: {1}".format(v1, v2)
+def assertion(case, v1, v2):
+    assert v1 == v2, "actual: {0}, expected: {1}".format(v1, v2)
+    if v1 == v2:
+        print("test case: {0}\n actual: {1}, expected: {2}. passed the test\n\n".format(case, v1, v2))
 
 # .c
-c_list = ['testdir/t1.c', 'testdir/subdir1/a.c', 'testdir/subdir5/a.c', 'testdir/subdir3/subsubdir1/b.c']
-assertion(find_files(".c", "testdir"), c_list)
+c_list = ['testdir/subdir1/a.c', 'testdir/subdir3/subsubdir1/b.c', 'testdir/subdir5/a.c', 'testdir/t1.c']
+assertion(".c", find_files(".c", "testdir"), c_list)
 
 # .h
-h_list = ['testdir/t1.h', 'testdir/subdir1/a.h', 'testdir/subdir5/a.h', 'testdir/subdir3/subsubdir1/b.h']
-assertion(find_files(".h", "testdir"), h_list)
+h_list = ['testdir/subdir1/a.h', 'testdir/subdir3/subsubdir1/b.h', 'testdir/subdir5/a.h', 'testdir/t1.h']
+assertion(".h",find_files(".h", "testdir"), h_list)
 
 # .py
 py_list = []
-assertion(find_files(".py", "testdir"), py_list)
+assertion(".py: should be empty", find_files(".py", "testdir"), py_list)

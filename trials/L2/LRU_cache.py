@@ -76,18 +76,20 @@ class LRU_Cache(object):
         # If the key exists, do nothing.
         return 
 
-def assertion(v1, v2):
+def assertion(case, v1, v2):
     assert v1 == v2, "actual: {0}, expected: {1}".format(v1, v2)
+    if v1 == v2:
+        print("test case: {0}\n actual: {1}, expected: {2}. passed the test\n\n".format(case, v1, v2))
 
 our_cache = LRU_Cache(2)
 
 our_cache.set(1, 11)
 our_cache.set(2, 22)
 
-assertion(our_cache.get(1), 11)
-assertion(our_cache.get(2), 22)
-assertion(our_cache.get(3), -1) # no key
+assertion("get 1 is 11", our_cache.get(1), 11)
+assertion("get 2 is 22", our_cache.get(2), 22)
+assertion("no key pattern", our_cache.get(3), -1) # no key
 
 our_cache.set(3, 33) # over capacity, remove 1
-assertion(our_cache.get(1), -1) # over capacity
-assertion(our_cache.get(3), 33) # set new value
+assertion("over capacity", our_cache.get(1), -1) # over capacity
+assertion("set new value", our_cache.get(3), 33) # set new value
