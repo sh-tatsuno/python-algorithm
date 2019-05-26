@@ -101,7 +101,7 @@ class HuffmanTree():
             self.root.set_left_child(new_root)
         return 
 
-class HeapTree():
+class BinaryTree():
     def __init__(self, huff_tree=None):
         self.root = self.get_new_node(huff_tree)
 
@@ -112,7 +112,7 @@ class HeapTree():
         self.root = self.get_new_node(huff_tree)
 
     def get_new_node(self, huff_tree):
-        if huff_tree ==None:
+        if huff_tree == None:
             return None
         return Node(index = huff_tree, value = huff_tree.get_root_value())
 
@@ -176,7 +176,7 @@ class HeapTree():
 
 class PriorityQueue(object):
     def __init__(self):
-        self.queue_tree = HeapTree()
+        self.queue_tree = BinaryTree()
     def push(self, huff_tree):
         self.queue_tree.insert(huff_tree)
         return
