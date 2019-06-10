@@ -15,7 +15,6 @@ def create_person_objects(names, ages, months):
     return person_objects
 
 def get_april_birthdays(people):
-    # TODO:
     # Increment "age" for all people with birthdays in April.
     # Return a dictionary "april_birthdays" with the names of
     # all people with April birthdays as keys, and their updated ages 
